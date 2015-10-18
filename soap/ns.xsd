@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <schema targetNamespace="urn:ns"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:ns"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <simpleType name="MsgDataPointer"><!-- ns__MsgDataPointer -->
+
+   <restriction base="xsd:base64Binary">
+   </restriction>
+  </simpleType>
+  <simpleType name="StrPointer"><!-- ns__StrPointer -->
+
+   <restriction base="xsd:base64Binary">
+   </restriction>
+  </simpleType>
+ </schema>
+

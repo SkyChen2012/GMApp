@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ns"
+ targetNamespace="http://localhost/ns.wsdl"
+ xmlns:tns="http://localhost/ns.wsdl"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns="urn:ns"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:ns"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:ns"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <simpleType name="MsgDataPointer"><!-- ns__MsgDataPointer -->
+
+   <restriction base="xsd:base64Binary">
+   </restriction>
+  </simpleType>
+  <complexType name="stMsg"><!-- stMsg -->
+
+   <sequence>
+     <element name="function" type="xsd:unsignedLong" minOccurs="1" maxOccurs="1"/><!-- stMsg::function -->
+     <element name="data" type="ns:MsgDataPointer" minOccurs="1" maxOccurs="1" nillable="true"/><!-- stMsg::data -->
+     <element name="len" type="xsd:int" minOccurs="1" maxOccurs="1"/><!-- stMsg::len -->
+     <element name="ip" type="xsd:unsignedLong" minOccurs="1" maxOccurs="1"/><!-- stMsg::ip -->
+   </sequence>
+  </complexType>
+  <simpleType name="StrPointer"><!-- ns__StrPointer -->
+
+   <restriction base="xsd:base64Binary">
+   </restriction>
+  </simpleType>
+  <complexType name="ArrayOfStrPointer">
+   <complexContent>
+    <restriction base="SOAP-ENC:Array">
+     <sequence>
+      <element name="item" type="ns:StrPointer" minOccurs="0" maxOccurs="unbounded" nillable="false"/>
+     </sequence>
+     <attribute ref="SOAP-ENC:arrayType" WSDL:arrayType="ns:StrPointer[]"/>
+    </restriction>
+   </complexContent>
+  </complexType>
+ </schema>
+
+</types>
+
+<message name="SendMsgRequest">
+ <part name="in" type="ns:stMsg"/><!-- ns__SendMsg::in -->
+</message>
+
+<message name="SendMsgResponse">
+ <part name="out" type="ns:stMsg"/><!-- ns__SendMsg::out -->
+</message>
+
+<message name="ATTReflashRequest">
+ <part name="ID" type="xsd:unsignedInt"/><!-- ns__ATTReflash::ID -->
+ <part name="IP" type="xsd:unsignedInt"/><!-- ns__ATTReflash::IP -->
+ <part name="Port" type="xsd:unsignedInt"/><!-- ns__ATTReflash::Port -->
+ <part name="TraceName" type="ns:StrPointer"/><!-- ns__ATTReflash::TraceName -->
+</message>
+
+<message name="ATTReflashResponse">
+ <part name="TraceStr" type="ns:StrPointer"/><!-- ns__ATTReflash::TraceStr -->
+</message>
+
+<message name="ATTGetSessionIDRequest">
+</message>
+
+<message name="ATTGetSessionIDResponse">
+ <part name="pID" type="xsd:unsignedInt"/><!-- ns__ATTGetSessionID::pID -->
+</message>
+
+<message name="ATTGetTraceNameRequest">
+ <part name="IP" type="xsd:unsignedInt"/><!-- ns__ATTGetTraceName::IP -->
+ <part name="Port" type="xsd:unsignedInt"/><!-- ns__ATTGetTraceName::Port -->
+</message>
+
+<message name="ATTGetTraceNameResponse">
+ <part name="out" type="ns:ArrayOfStrPointer"/><!-- ns__ATTGetTraceName::out -->
+</message>
+
+<message name="ATTGetAnalyseNameRequest">
+ <part name="IP" type="xsd:unsignedInt"/><!-- ns__ATTGetAnalyseName::IP -->
+ <part name="Port" type="xsd:unsignedInt"/><!-- ns__ATTGetAnalyseName::Port -->
+</message>
+
+<message name="ATTGetAnalyseNameResponse">
+ <part name="out" type="ns:ArrayOfStrPointer"/><!-- ns__ATTGetAnalyseName::out -->
+</message>
+
+<message name="ATTGetAnalyseRequest">
+ <part name="IP" type="xsd:unsignedInt"/><!-- ns__ATTGetAnalyse::IP -->
+ <part name="Port" type="xsd:unsignedInt"/><!-- ns__ATTGetAnalyse::Port -->
+ <part name="AnalyseName" type="ns:StrPointer"/><!-- ns__ATTGetAnalyse::AnalyseName -->
+</message>
+
+<message name="ATTGetAnalyseResponse">
+ <part name="AnalyseStr" type="ns:StrPointer"/><!-- ns__ATTGetAnalyse::AnalyseStr -->
+</message>
+
+<portType name="nsPortType">
+ <operation name="SendMsg">
+  <documentation>Service definition of function ns__SendMsg</documentation>
+  <input message="tns:SendMsgRequest"/>
+  <output message="tns:SendMsgResponse"/>
+ </operation>
+ <operation name="ATTReflash">
+  <documentation>Service definition of function ns__ATTReflash</documentation>
+  <input message="tns:ATTReflashRequest"/>
+  <output message="tns:ATTReflashResponse"/>
+ </operation>
+ <operation name="ATTGetSessionID">
+  <documentation>Service definition of function ns__ATTGetSessionID</documentation>
+  <input message="tns:ATTGetSessionIDRequest"/>
+  <output message="tns:ATTGetSessionIDResponse"/>
+ </operation>
+ <operation name="ATTGetTraceName">
+  <documentation>Service definition of function ns__ATTGetTraceName</documentation>
+  <input message="tns:ATTGetTraceNameRequest"/>
+  <output message="tns:ATTGetTraceNameResponse"/>
+ </operation>
+ <operation name="ATTGetAnalyseName">
+  <documentation>Service definition of function ns__ATTGetAnalyseName</documentation>
+  <input message="tns:ATTGetAnalyseNameRequest"/>
+  <output message="tns:ATTGetAnalyseNameResponse"/>
+ </operation>
+ <operation name="ATTGetAnalyse">
+  <documentation>Service definition of function ns__ATTGetAnalyse</documentation>
+  <input message="tns:ATTGetAnalyseRequest"/>
+  <output message="tns:ATTGetAnalyseResponse"/>
+ </operation>
+</portType>
+
+<binding name="ns" type="tns:nsPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="SendMsg">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ATTReflash">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ATTGetSessionID">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ATTGetTraceName">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ATTGetAnalyseName">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ATTGetAnalyse">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ns" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="ns">
+ <documentation>service</documentation>
+ <port name="ns" binding="tns:ns">
+  <SOAP:address location="http://localhost:2298"/>
+ </port>
+</service>
+
+</definitions>

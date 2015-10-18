@@ -1,0 +1,220 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"i",
+				"inc	#include \"…\""
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"selected_items":
+		[
+			[
+				"re mo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Benson/Library/Application Support/Sublime Text 2/Packages/ConvertToUTF8/ConvertToUTF8.sublime-settings",
+		"/Users/Benson/Library/Application Support/Sublime Text 2/Packages/User/ConvertToUTF8.sublime-settings",
+		"/Users/Benson/Library/Application Support/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/Users/Benson/GitHub/GMApp/CardProc/hash.c.dump",
+		"/Users/Benson/GitHub/GMApp/CardProc/hash.c",
+		"/Users/Benson/GitHub/GMApp/Menu/LanguageSet.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessCommon/AccessCommon.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessProc/ACAgentProc.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessCommon/AccessCommon.h.dump",
+		"/Users/Benson/GitHub/GMApp/PioApi/IOControl.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessCommon/AccessCommon.c",
+		"/Users/Benson/GitHub/GMApp/AccessProc/ACAgentProc.c",
+		"/Users/Benson/GitHub/GMApp/AccessSetting/AccessSystemWnd.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessSetting/ASSetWnd.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessSetting/CardMngWnd.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessSetting/AddCardWnd.c.dump",
+		"/Users/Benson/GitHub/GMApp/AccessSetting/ASSetWnd.h",
+		"/Users/Benson/GitHub/GMApp/AccessSetting/ASSetWnd.c",
+		"/Users/Benson/Library/Application Support/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/Benson/Documents/Work/MOX/env/env",
+		"/Users/Benson/Documents/Learn  Language/Apple/learn/网络/网络/Images.xcassets/AppIcon.appiconset/Contents.json",
+		"/Users/Benson/Documents/Learn  Language/Apple/learn/textFieldTextView/textFieldTextView/Images.xcassets/AppIcon.appiconset/Contents.json",
+		"/Users/Benson/Documents/Learn  Language/Apple/learn/图片浏览器/图片浏览器/imagelist.plist"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 202.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,49 @@
+############################################################
+
+EthGMDir = $(TOP)/demos/mwin_ethgm
+
+CommonDir = $(EthGMDir)/Common
+DispatchDir = $(EthGMDir)/Dispatch
+MainDir = $(EthGMDir)/Main
+TalkingDir = $(EthGMDir)/Talking
+EthDir = $(EthGMDir)/Eth
+MultiMediaDir = $(EthGMDir)/MultiMedia
+AccessCommonDir		=   $(EthGMDir)/AccessCommon
+AccessProcDir		=   $(EthGMDir)/AccessProc
+CardProcDir		=   $(EthGMDir)/CardProc
+ParaSettingDir	=   $(EthGMDir)/ParaSetting
+MulMediaLibDir		=	$(EthGMDir)/MulMediaLib
+PioApiDir		=	$(EthGMDir)/PioApi
+MenuDir		=	$(EthGMDir)/Menu
+TelnetdDir		=	$(EthGMDir)/Telnetd
+JpegLibDir		=	$(EthGMDir)/JpegLib
+AccessSettingDir	=	$(EthGMDir)/AccessSetting
+PatrolDir		=	$(EthGMDir)/Patrol
+LiftControlDir		=	$(EthGMDir)/LiftControl
+SecurityAlarmDir		=	$(EthGMDir)/SecurityAlarm
+DIDOCtrlDir		=	$(EthGMDir)/DIDOCtrl
+
+# Directories list for header files
+INCLUDEDIRS += -I$(CommonDir) \
+	-I$(DispatchDir) \
+	-I$(TalkingDir) \
+	-I$(EthDir) \
+	-I$(MultiMediaDir) \
+	-I$(MainDir) \
+	-I$(AccessCommonDir) \
+	-I$(AccessProcDir) \
+	-I$(CardProcDir) \
+	-I$(ParaSettingDir) \
+	-I$(MulMediaLibDir) \
+	-I$(PioApiDir) \
+	-I$(MenuDir) \
+	-I$(TelnetdDir) \
+	-I$(JpegLibDir) \
+	-I$(AccessSettingDir) \
+	-I$(PatrolDir) \
+	-I$(DIDOCtrlDir) \
+	-I$(LiftControlDir) \
+	-I$(SecurityAlarmDir) \
+	
+CFLAGS += -O3 -Wall
+#CFLAGS += -D NEW_OLED_ENABLE
